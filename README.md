@@ -12,4 +12,4 @@ Comision: 61995
 
 preview
 
-[![Texto alternativo](https://github.com/eliasescalante/happy_dog/blob/main/capture_happy_dog.JPG)](https://github.com/eliasescalante/proyecto_js_coder/blob/main/capture_web.JPG)
+[![Texto alternativo]([(https://github.com/eliasescalante/proyecto_js_coder/blob/main/capture_web.JPG)]
