@@ -10,7 +10,7 @@ function iniciar() {
 
 function obtenerDecision() {
     // Función para obtener la decisión del usuario
-    let mensajeDiv = document.getElementById("mensaje");
+    let mensajeDiv = document.querySelector("#mensaje");
     mensajeDiv.innerHTML = `
         <p>Ingresa 1 para comenzar o 2 para terminar:</p>
         <input type="number" id="decisionInput" min="1" max="2">
@@ -23,7 +23,7 @@ function procesarDecision() {
     Función para obtener la decisión del usuario.
  *  Muestra un input para que el usuario ingrese 1 para comenzar o 2 para terminar.
      */
-    let decisionInput = document.getElementById("decisionInput").value;
+    let decisionInput = document.querySelector("#decisionInput").value;
     let decision = parseInt(decisionInput);
 
     if (isNaN(decision) || (decision !== 1 && decision !== 2)) {
@@ -51,7 +51,7 @@ function agregarProducto() {
     Procesa la decisión ingresada por el usuario.
     Si la decisión es válida, procede a listar las compras; de lo contrario, vuelve a pedir la decisión.
     */
-    let mensajeDiv = document.getElementById("mensaje");
+    let mensajeDiv = document.querySelector("#mensaje");
     mensajeDiv.innerHTML = `
         <p>Ingresa tu producto al listado:</p>
         <input type="text" id="productoInput">
@@ -60,7 +60,11 @@ function agregarProducto() {
 }
 
 function procesarProducto() {
-    let productoInput = document.getElementById("productoInput").value;
+    /**
+    Procesa el producto ingresado por el usuario.
+    Si el producto es válido, lo añade a la lista de productos y actualiza la lista mostrada.
+    */
+    let productoInput = document.querySelector("#productoInput").value;
 
     if (productoInput !== null && productoInput !== "") {
         productos.push(productoInput);
@@ -74,7 +78,10 @@ function procesarProducto() {
 }
 
 function obtenerDecisionContinuar() {
-    let mensajeDiv = document.getElementById("mensaje");
+    /*
+    Muestra opciones para que el usuario decida si quiere continuar agregando productos.
+    */
+    let mensajeDiv = document.querySelector("#mensaje");
     mensajeDiv.innerHTML = `
         <p>¿Desea continuar agregando productos?</p>
         <button onclick="continuar()">Sí</button>
@@ -83,27 +90,40 @@ function obtenerDecisionContinuar() {
 }
 
 function continuar() {
+    /**
+    Función para continuar agregando productos.
+    Llama a la función para agregar productos.
+    */
     agregarProducto();
 }
 
 function terminar() {
+    /*
+    Función para terminar de agregar productos.
+    Llama a la función para mostrar la lista de productos.
+    y muestra un mensaje de despedida
+    */
     mostrarListaFinalizada();
     mostrarMensaje(DESPEDIDA);
 }
 
 function mostrarListaFinalizada() {
-    productos = obtenerProductos();
+    /**
+    Muestra la lista finalizada de productos almacenados.
+    Recupera los productos del almacenamiento local y actualiza la lista mostrada.
+    */
     actualizarLista(productos);
 }
 
 function mostrarMensaje(mensaje) {
-    let mensajeDiv = document.getElementById("mensaje");
+    let mensajeDiv = document.querySelector("#mensaje");
     mensajeDiv.textContent = mensaje;
 }
 
 function actualizarLista(productos) {
-    let listaCompras = document.getElementById("listaCompras");
-    listaCompras.innerHTML = "";  // Limpiar lista anterior
+    //Actualiza la lista de compras mostrada en la página.
+    let listaCompras = document.querySelector("#listaCompras");
+    listaCompras.innerHTML = ""; 
 
     productos.forEach(function(producto, index) {
         let li = document.createElement("li");
@@ -122,18 +142,21 @@ function actualizarLista(productos) {
 }
 
 function eliminarProducto(index) {
+    // Elimina un producto de la lista de productos.
     productos.splice(index, 1);
     guardarProductos(productos);
     actualizarLista(productos);
 }
 
 function guardarProductos(productos) {
+    //Guarda la lista de productos en el almacenamiento local.
     localStorage.setItem('listaCompras', JSON.stringify(productos));
 }
 
 function obtenerProductos() {
+    //Recupera la lista de productos del localstorage
     let productos = localStorage.getItem('listaCompras');
     return productos ? JSON.parse(productos) : [];
 }
 
-document.getElementById("iniciarBtn").addEventListener("click", iniciar);
+document.querySelector("#iniciarBtn").addEventListener("click", iniciar);
