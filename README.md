@@ -1,10 +1,10 @@
 # proyecto_js_coder
 Segunda pre-entrega de Coder House del curso de Javascript
 
-Alumno: Elias Escalante
-Tutor: Maximiliano Salas
-Profesor: [profe] eze
-Comision: 61995
+- Alumno: Elias Escalante
+- Tutor: Maximiliano Salas
+- Profesor: [profe] eze
+- Comision: 61995
 
 ----
 
