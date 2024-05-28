@@ -12,4 +12,4 @@ Segunda pre-entrega de Coder House del curso de Javascript
 
 preview
 
-[![Texto alternativo](https://github.com/eliasescalante/proyecto_js_coder/blob/main/capture_web.JPG)
+![Texto alternativo](https://github.com/eliasescalante/proyecto_js_coder/blob/main/capture_web.JPG)
