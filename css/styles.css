@@ -1,0 +1,83 @@
+
+/* Cuerpo de la pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    color: #444;
+    text-align: center;
+}
+
+#mensaje {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#entrada {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul#listaCompras {
+    list-style: none;
+    padding: 0;
+}
+
+ul#listaCompras li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* estilo para el boton*/
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* efectos para los botones*/
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn-eliminar {
+    background-color: #f44336;
+    padding: 5px 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #d32f2f;
+}
+
+/* estilos para los input*/
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    margin: 5px;
+}
